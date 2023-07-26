@@ -21,7 +21,12 @@ header {
   padding: 20px 0;
   position: relative;
 }
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
 header nav ul {
+  margin-right: 250px;
   display: flex;
   justify-content: center;
 }
@@ -37,6 +42,7 @@ header .menu {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 1;
 }
 a {
   color: rgb(109, 108, 104);
@@ -56,6 +62,7 @@ a {
 }
 .hidden-section {
   position: absolute;
+  top: 25px;
   left: 0;
   margin-top: 10px;
   transform: translateX(-10%);
@@ -70,6 +77,10 @@ a {
 }
 .flex {
   display: flex !important;
+}
+.x-icone {
+  display: none;
+  position: absolute;
 }
 .content {
   display: flex;
@@ -152,21 +163,23 @@ footer {
   }
   header .menu {
     display: block;
+    z-index: 999;
   }
   header nav {
+    flex-direction: column;
     width: 100%;
     background-color: rgb(237, 230, 223);
-    padding: 20px;
     position: absolute;
+    padding-top: 30px;
     top: 20px;
     right: 0;
-    /* transform: translateY(50%); */
-    transform: translateX(100%);
+    transform: translateX(120%);
     transition: translateX 0.3s ease-in-out;
   }
   header nav ul {
     flex-direction: column;
     align-items: center;
+    margin-right: 0px !important;
   }
   header nav ul li {
     padding-left: 0 !important;
@@ -175,25 +188,27 @@ footer {
   }
   header .sign-in {
     display: flex;
-    background-color: rgb(237, 230, 223);
     padding: 15px;
-    width: 100%;
     flex-direction: column !important;
     align-items: center;
-    position: absolute;
-    right: 0px;
-    top: 130px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    transform: translateX(100%);
-    transition: all 0.3s ease-in-out;
   }
   .translate {
     transform: translateX(0%) !important;
     transition: all 0.3s ease-in-out;
   }
+
   header .sign-in a {
     padding-bottom: 10px;
+  }
+  .hidden-section {
+    transform: translateX(0%);
+    transform: translateY(-5%);
+    top: 0;
+  }
+  .hidden-section .x-icone {
+    display: block;
+    right: 10px;
+    top: 20px;
   }
   .ratings-from > p,
   svg {
